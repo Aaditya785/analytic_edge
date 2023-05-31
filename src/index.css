@@ -11,3 +11,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* For Pagination */
+
+.item-container {
+  margin-bottom: 20px;
+}
+
+.item-container h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  top: 90%;
+  right: 50%;
+  width: max-content;
+  transform: translate(50%, -50%);
+}
+
+.pagination-container ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-container li {
+  margin: 0 5px;
+}
+
+.pagination-container a {
+  display: block;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.pagination-container a.active {
+  background-color: #ccc;
+}
+
+.pagination-container a:hover {
+  background-color: #f0f0f0;
+}
