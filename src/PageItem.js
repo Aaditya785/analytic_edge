@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-// import './PageItem.css'; // Import the CSS file
+
 
 function Items({ currentItems }) {
   return (
