@@ -5,10 +5,10 @@ function App() {
 
 
   return (
-    <>
-      <h1>Hello world</h1>
+    <div className="main">
+      <h1>Just Giving Example for random posts.</h1>
       <PageItem itemsPerPage={5} />
-    </>
+    </div>
   );
 }
 

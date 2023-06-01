@@ -8,7 +8,22 @@ function Items({ currentItems }) {
       {currentItems &&
         currentItems.map((item) => (
           <div className="item-container" key={item.id}>
-            <h3>{item.id}</h3>
+            <details>
+              <summary>For id:- {item.id}</summary>
+              <table className='table'>
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Body</th>
+                </tr>
+                <tr>
+                  <td>{item.id}</td>
+                  <td>{item.title}</td>
+                  <td>{item.body}</td>
+                </tr>
+              </table>
+            </details>
+
           </div>
         ))}
     </>
@@ -20,15 +35,17 @@ function PageItem({ itemsPerPage }) {// 5 item each page
   const [currentItems, setCurrentItems] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
 
-  const forLength = async() => {
-    const response = await fetch(
-      `http://jsonplaceholder.typicode.com/posts`
-    );
-    const data = await response.json();
-    console.log("Result:--:", data.length);
-    setTotalItems(data.length);
-  }
-  forLength();
+  useEffect(()=>{
+    const forLength = async() => {
+      const response = await fetch(
+        `http://jsonplaceholder.typicode.com/posts`
+      );
+      const data = await response.json();
+      console.log("Result:--:", data);
+      setTotalItems(data.length);
+    }
+    forLength();
+  },[]);
 
   useEffect(() => {
     const fetchData = async () => {
